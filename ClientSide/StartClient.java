@@ -1,14 +1,14 @@
 import java.net.*;
 import javax.swing.JOptionPane;
 
-public class Start {
+public class StartClient {
   static String port = "4907";
 
   public static void main(String args[]) {
     // a text box to enter the server ip
     String ip = JOptionPane.showInputDialog("Enter the IP Address");
 
-    new Start().intialize(ip, Integer.parseInt(port));
+    new StartClient().intialize(ip, Integer.parseInt(port));
   }
 
   public void intialize(String ip, int port) {
