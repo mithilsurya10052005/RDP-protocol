@@ -1,14 +1,38 @@
+import java.awt.*;
 import java.net.*;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class StartClient {
   static String port = "4907";
 
-  public static void main(String args[]) {
-    // a text box to enter the server ip
-    String ip = JOptionPane.showInputDialog("Enter the IP Address");
+  public static void start() {
+    ImageIcon icon = new ImageIcon("anydesk.png");
+    String[] options = {"QUIT", "GO"};
 
-    new StartClient().intialize(ip, Integer.parseInt(port));
+    JTextField ipField = new JTextField();
+    Object[] message = {
+            "Enter the IP Address:", ipField
+    };
+
+    int choice = JOptionPane.showOptionDialog(
+            null,
+            message,
+            "RDP-Access",
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            icon,
+            options,
+            options[1]
+    );
+
+    if (choice == 1) { // index 1 corresponds to "GO"
+      String ip = ipField.getText();
+      if (ip != null && !ip.trim().isEmpty()) {
+        new StartClient().intialize(ip, Integer.parseInt(port));
+      }
+    } else {
+      System.out.println("User chose to quit or closed the dialog.");
+    }
   }
 
   public void intialize(String ip, int port) {
@@ -18,9 +42,7 @@ public class StartClient {
       Authentication frame1 = new Authentication(sc);
       frame1.setSize(300, 80);
       frame1.setLocation(500, 300);
-
       frame1.setVisible(true);
-
     } catch (Exception e) {
       e.printStackTrace();
     }
