@@ -38,7 +38,7 @@ public class ChatBox extends Thread {
                     String message = in.readUTF();
 
                    System.out.println("Message received: " + message);
-                  server.putmessage("Client", message);
+                  server.putMessage("Client", message);
 
                 } catch (IOException e) {
                     System.out.println("Client disconnected.");

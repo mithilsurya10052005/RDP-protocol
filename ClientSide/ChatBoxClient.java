@@ -31,7 +31,7 @@ public class ChatBoxClient extends Thread {
             while (running) {
                 try {
                     String message = in.readUTF();
-                    chatDisplayClient.putmessage("Server", message);
+                    chatDisplayClient.putMessage("Server", message);
                     // Call function to display message
                 } catch (IOException e) {
                     System.out.println("Server disconnected.");

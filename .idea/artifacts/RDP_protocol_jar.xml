@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RDP-protocol:jar">
+    <output-path>$PROJECT_DIR$/..</output-path>
+    <root id="archive" name="RDP-protocol.jar">
+      <element id="module-output" name="RDP-protocol" />
+    </root>
+  </artifact>
+</component>
