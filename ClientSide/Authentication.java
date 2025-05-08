@@ -55,6 +55,7 @@ public class Authentication extends JFrame implements ActionListener {
         e.printStackTrace();
       }
       CreateFrame abc = new CreateFrame(cSocket, width, height);
+
       dispose();
     } else {
       System.out.println("PLS enter valid password ");
